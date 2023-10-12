@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login-style.css" />
+    <link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="color: #737afe;">SEQURE Chatt - Bli medlem.  </h1>
+    <form action="/auth/register" method="post">
+      <input type="text" name="name" placeholder="Användarnamn" />
+      <input type="email" style="margin-top: 10px;" name="email" placeholder="Mail" />
+      <input type="password" min="6" name="password" placeholder="Lösenord" />
+      <input
+        type="password"
+        name="passwordConfirm"
+        placeholder="Lösenord igen"
+      />
+      <input type="submit" value="submit" />
+          </br>
+      <label> Redan registrerad? </label>
+  
+      <a href="/login">Logga In</a>
+      {{#if message}}
+        <h4>{{message}}</h4>
+      {{/if}}
+    </form>
+  </body>
+</html>

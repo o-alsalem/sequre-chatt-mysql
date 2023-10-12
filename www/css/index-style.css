@@ -1,0 +1,105 @@
+:root {
+    font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+
+
+header {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+
+
+}
+
+header .first-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to bottom right, #737afe 0%, #737afe 50%, #FFFFFF 50%, #FFFFFF 100%);
+    /*     background-image: url("/css/phone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%; */
+
+
+}
+
+header .first-section img {
+    height: 40%;
+    width: 90%;
+
+}
+
+
+button {
+    background-color: black;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+
+    cursor: pointer;
+    box-shadow: 0 2px 3px 0 rgb(63 63 60 / 20%);
+}
+
+button:active {
+    box-shadow: 0 2px 3px 0 rgb(63 63 60 / 20%);
+    transform: translateY(1px);
+    background-color: black !important;
+}
+
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #737afe;
+
+}
+
+.second-section {
+    position: absolute;
+    top: 40%;
+    left: 100px;
+
+}
+
+nav a {
+
+    color: #FFFFFF;
+    font-size: 10px;
+    cursor: pointer;
+
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+h4,
+h1 {
+    color: #FFFFFF;
+
+
+}

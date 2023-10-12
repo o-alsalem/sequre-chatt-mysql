@@ -1,0 +1,41 @@
+
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login-style.css" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+  </head>
+  <body>
+        <h4 class="logo">SEQURE - encryption, secrecy & reputability.</h4>
+<center>
+    <form action="/auth/login" method="post">
+        <h4>SEQURE Chatt - Logga In</h4>
+      <input type="email" name="email" placeholder="email@outlook.com" />
+      <input type="password" name="password"  min="6" placeholder="••••••" />
+      <input type="submit" value="Login" />
+      </br>      </br>
+  
+      <label> Inte medlem?</label>
+      <a href="/register">Gå med!</a>
+      
+    </br>    </br>    </br>
+ 
+      
+      {{#if message}}
+        <p>{{message}}</p>
+      {{/if}}
+
+   
+    </form>
+    </center>
+  </body>
+</html>

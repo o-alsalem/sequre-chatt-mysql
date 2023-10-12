@@ -1,0 +1,134 @@
+<html lang="en">
+
+  <head>
+    <title>SEQURE - encryption, secrecy & reputability.</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/7adc3852c9.js"
+      crossorigin="anonymous"
+    ></script>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+jQuery(function(){
+   jQuery('#main').click();
+});
+</script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+
+  </head>
+
+  <body onload="addState()">
+    <div class="logo" style=" width: 18%;left: 40px !important; top: 0 !important;background-color: #f6f6f6; " >
+      <p style=" font-size: 20px;color: #737afe; font-weight:bold;" >SEQURE</p>
+      <p >Välkommen, {{name}}</p>
+      <a style="float: left; color:#222222;" href="#"> Inställningar</a>
+      <a style="float: left; margin-left:15px; color:#222222;" href="../logout">Logga ut</a>
+    </div>
+    <div class="chatt-application">
+
+      <div class="public-chatt-list" >
+     
+                <button onclick="toggle()" style=" color:#FFFFFF !important; background-color: #737afe !important; border-radius: 40px !important;" class="open-public-and-private-btn">
+          <label class="profile-picture" style="background-color: #FFFFFF !important; ">
+          <i class="fa-solid fa-user-group"></i>
+             
+         </label>
+           ㅤ Skapa grupp</button>
+
+
+      <div class="open-public-and-private-btn" id="create-channal" style="display: none; height:90px !important;" >
+        <center>
+
+          <input type="text" name="channal_name"  id="channal-name" placeholder="Gruppnamn" />
+          <button type="submit" id="create" onclick="create()" >  <i class="fa-solid fa-add"></i></button>
+        <label style=" text-align:center;font-size: 10px; color:#222;">   Endast medlemmar: <input type="checkbox" name="channal_name"  id="channal-private" placeholder="private" /></label>
+        </form>
+   </center>
+    </div>
+        <button
+          onclick="setChannal('1','Offentlig')"
+          class="open-public-and-private-btn" id="main"
+        >
+          <label class="profile-picture"><i class="fa-solid fa-earth-europe"></i></label>
+          ㅤOffentlig
+        </button>
+        <button
+          onclick="setChannal('2','Spel & Program')"
+          class="open-public-and-private-btn"
+        >
+          <label class="profile-picture"><i
+              class="fa-solid fa-gamepad"
+            ></i></label>
+          ㅤSpel & Program
+        </button>
+        <button
+          onclick="setChannal('3','Politik & Samhälle')"
+          class="open-public-and-private-btn"
+          style="border-bottom:none;"
+        >
+            <label class="profile-picture"><i class="fa-solid fa-lock"></i></label>
+          ㅤPolitik & Samhälle
+        </button>
+        {{#each channals}}
+          <button
+            onclick="setChannal('{{id}}','{{id}}')"
+            class="open-public-and-private-btn"
+            style="border-bottom:none;"
+          >
+            <label class="profile-picture"><i
+                class="fa-solid fa-shuffle"
+              ></i></label>
+            {{channal_name}}
+          </button>
+        {{/each}}
+
+
+
+      </div>
+
+      <div class="chatt">
+        <div id="messages" >
+<ul id="messages-ul" >
+
+
+  </ul>
+        </div>
+
+        <form id="send-container" method="post" action="/send-public">
+          <input
+            type="text"
+            id="message-input"
+            name="message"
+            placeholder="Skriv ett meddelande"
+            value=""
+            maxlength="120"
+          />
+
+          <button type="submit" id="send-button"><i style="color:#FFFFFF;"class="fa-regular fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script>
+      var guest = false;
+      var username = "{{name}}";
+      var userid = "{{id}}";
+    </script>
+    <script src="/js/index.js"></script>
+
+  </body>
+
+</html>
